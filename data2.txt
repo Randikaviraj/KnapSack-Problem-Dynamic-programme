@@ -1,0 +1,4 @@
+KnapSackWeight 50 NoOfValues 3
+10 60
+20 100
+30 120

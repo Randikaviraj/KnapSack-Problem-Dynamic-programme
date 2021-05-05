@@ -3,7 +3,19 @@ import time
 
 
 def kuruskalAlgorithm(noOfValues: int,knapSackWeight: int,weightValueList: list):
-    pass
+    def keyFunc(tup):
+        return tup[0]
+
+    weightValueList.sort(key=keyFunc)
+
+    memo=[ [0] * (knapSackWeight+1) for _ in range((noOfValues+1))]
+    for n in range(noOfValues):
+        for w in range(knapSackWeight):
+            if (w+1-weightValueList[n][0])>=0:
+                memo[n+1][w+1]=max(memo[n][w+1],(memo[n][w+1-weightValueList[n][0]]+ weightValueList[n][1]))
+            else:
+                memo[n+1][w+1]=memo[n][w+1]
+    return memo[noOfValues][knapSackWeight]
 
 
 if __name__ =="__main__":
