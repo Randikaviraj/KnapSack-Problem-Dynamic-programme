@@ -17,5 +17,5 @@ KnapSackWeight 50 NoOfValues 3
 
 ## Run the programme
 ```
-python KnapSack.py <naem of the data file>
+python KnapSack.py <name of the data file>
 ```
